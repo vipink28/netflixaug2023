@@ -38,4 +38,6 @@ export const tvSlice = createSlice({
     }
 })
 
+export const netflixOriginalSelector = (state)=>state.tv.netflixOriginals;
+
 export default tvSlice.reducer;
