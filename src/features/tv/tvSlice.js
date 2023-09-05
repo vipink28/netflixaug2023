@@ -7,7 +7,12 @@ const initialState = {
         data: null,
         status: "idle",
         error: null
-    }    
+    },
+    popularShows:{
+        data: null,
+        status: "idle",
+        error: null
+    }   
 }
 
 export const fetchNetflixOriginals = createAsyncThunk(
@@ -24,6 +29,17 @@ export const tvSlice = createSlice({
     reducers:{},
     extraReducers: (builder)=>{
         builder
+        .addCase(fetchNetflixOriginals.pending, (state)=>{
+            state.netflixOriginals.status = "loading"
+        })
+        .addCase(fetchNetflixOriginals.fulfilled, (state, action)=>{
+            state.netflixOriginals.status = "success";
+            state.netflixOriginals.data = action.payload;
+        })
+        .addCase(fetchNetflixOriginals.rejected, (state, action)=>{
+            state.netflixOriginals.status = "failed";
+            state.netflixOriginals.error = action.error;
+        })
         .addCase(fetchNetflixOriginals.pending, (state)=>{
             state.netflixOriginals.status = "loading"
         })
