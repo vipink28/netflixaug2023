@@ -8,17 +8,20 @@ import { fetchNetflixOriginals, netflixOriginalSelector } from '../features/tv/t
 import Card from './Card';
 
 function Row(props) {
-    const content = useSelector(netflixOriginalSelector);
+    const { title, action, selector } = props;
+
+    const content = useSelector(selector);
     const { data, status, error } = content;
 
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(fetchNetflixOriginals());
+        dispatch(action());
     }, [])
 
 
     return (
         <div className='py-3'>
+            <h4 className='mb-3'>{title}</h4>
             <Swiper
                 modules={[Navigation]}
                 navigation
