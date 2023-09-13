@@ -14,7 +14,6 @@ function Ratings(props) {
             <div className="d-flex">
             {
                 totalStars.map((item, index)=>{
-                    debugger
                     return (                   
                         vote > index ?     
                         <FontAwesomeIcon className='text-warning' icon={faStarSolid}/> :

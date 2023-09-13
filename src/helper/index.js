@@ -10,3 +10,8 @@ export const truncateText=(str="", limit)=>{
         return text + "...";
     }
 }
+
+export const printYear=(dateString)=>{
+    let date = new Date(dateString);
+    return date.getFullYear();
+}
