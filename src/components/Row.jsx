@@ -8,7 +8,7 @@ import { fetchNetflixOriginals, netflixOriginalSelector } from '../features/tv/t
 import Card from './Card';
 
 function Row(props) {
-    const { title, action, selector } = props;
+    const { title, action, selector, platform } = props;
 
     const content = useSelector(selector);
     const { data, status, error } = content;
@@ -31,7 +31,7 @@ function Row(props) {
                 {
                     data?.results.map((item)=>{
                      return <SwiperSlide key={item.id}>
-                        <Card video={item}/>
+                        <Card video={item} platform={platform}/>
                      </SwiperSlide>   
                     })
                 }

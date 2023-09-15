@@ -34,6 +34,10 @@ function Header(props) {
         setIsTrailer(true);
     }
 
+    const closeTrailer=()=>{
+        setIsTrailer(false);
+    }
+
     return (
         <div className='h-100 position-relative text-white w-100'>
            { 

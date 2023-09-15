@@ -24,13 +24,13 @@ function Homescreen(props) {
                 :""
             }
             <div className='container-fluid'>
-            <Row title="Top Rated Movies" selector={topRatedMoviesSelector} action={fetchTopRatedMovies}/>
+            <Row title="Top Rated Movies" selector={topRatedMoviesSelector} action={fetchTopRatedMovies} platform="movie"/>
 
-                <Row title="Popular Shows" selector={popularShowSelector} action={fetchPopularShows}/>
+                <Row title="Popular Shows" selector={popularShowSelector} action={fetchPopularShows} platform="tv"/>
 
-                <Row title="Netflix Originals" selector={netflixOriginalSelector} action={fetchNetflixOriginals}/>
+                <Row title="Netflix Originals" selector={netflixOriginalSelector} action={fetchNetflixOriginals} platform="tv"/>
 
-                <Row title="Popular Movies" selector={popularMoviesSelector} action={fetchPopularMovies}/>
+                <Row title="Popular Movies" selector={popularMoviesSelector} action={fetchPopularMovies} platform="movie"/>
             </div>
         </>
     );
