@@ -4,6 +4,7 @@ import { fetchNetflixOriginals, fetchPopularShows, netflixOriginalSelector, popu
 import Header from '../components/Header';
 import Row from '../components/Row';
 import { fetchPopularMovies, fetchTopRatedMovies, popularMoviesSelector, topRatedMoviesSelector } from '../features/movie/movieSlice';
+import { platforms } from '../helper/requests';
 
 function Homescreen(props) {
     const nfOriginals = useSelector(netflixOriginalSelector);
@@ -20,7 +21,7 @@ function Homescreen(props) {
         <>
             {
                 data ?
-                <Header video={data?.results[randomNumber]}/>
+                <Header video={data?.results[randomNumber]} platform={platforms.tv}/>
                 :""
             }
             <div className='container-fluid'>
