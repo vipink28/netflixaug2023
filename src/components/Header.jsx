@@ -25,8 +25,11 @@ function Header(props) {
 
     useEffect(()=>{
         if(data){
+            debugger
             const youtubeTrailer = data?.videos?.results.filter((item)=>item.type === "Trailer");
-            setTrailerKey(youtubeTrailer[0].key);
+            if(youtubeTrailer.length > 0){
+                setTrailerKey(youtubeTrailer[0].key);
+            }
         }
     }, [data])
 

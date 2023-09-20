@@ -4,7 +4,8 @@ export const requests = {
     getNetflixOriginals: `discover/tv?api_key=${API_KEY}&language=en-US&with_networks=213`,
     getCollections: (platform, type)=>`${platform}/${type}?api_key=${API_KEY}&language=en-US`,
     getVideoDetails: (video)=>`${video.platform}/${video.id}?api_key=${API_KEY}&language=en-US&append_to_response=videos`,
-    getGenres: (platform)=>`genre/${platform}/list?api_key=${API_KEY}`
+    getGenres: (platform)=>`genre/${platform}/list?api_key=${API_KEY}`,
+    getVideoByGenre: (platform, genreid)=>`discover/${platform}?api_key=${API_KEY}&language=en-US&with_genres=${genreid}`,
 }
 
 export const endpoints = {
