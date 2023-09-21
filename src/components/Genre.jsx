@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Genre(props) {
-    const{ genre } = props;
+    const{ genre, platform } = props;
     return (
-        <Link to={genre.id} className='badge bg-warning me-2 p-2'>{genre.name}</Link>
+        <Link to={`/browsebygenre/${platform}/${genre.id}`} className='badge bg-warning me-2 p-2'>{genre.name}</Link>
     );
 }
 

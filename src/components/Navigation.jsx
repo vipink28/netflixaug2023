@@ -24,6 +24,10 @@ function Navigation(props) {
             <Link className="nav-link" to="/browse/movie">Movies</Link>
           </li>
 
+          <li className="nav-item">
+            <Link className="nav-link" to="browsebygenre/movie/18">Browse By Genre</Link>
+          </li>
+
           <li className="nav-item dropdown">
             <Link className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</Link>
             <ul className="dropdown-menu">
